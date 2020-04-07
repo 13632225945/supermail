@@ -1,9 +1,9 @@
 <template>
   <div class="tab-bar-item" :class="{active: isActive}"
     :style="activeStyle" @click="itemClick">
-    <div v-if="isActive"><slot name="img-active"></slot></div>
-    <div v-else><slot name="img"></slot></div>
-    <div>
+    <div v-if="isActive" class="img"><slot name="img-active"></slot></div>
+    <div v-else class="img"><slot name="img"></slot></div>
+    <div class="content">
       <slot name="content"></slot>
     </div>
   </div>
@@ -16,6 +16,10 @@ export default {
     activeColor: {
       type: String,
       default: 'blue'
+    },
+    beforeRoute: {
+      type: Function,
+      default: () => {return true}
     }
   },
   data() {
@@ -32,20 +36,24 @@ export default {
   },
   methods: {
     itemClick() {
-      this.$router.push(this.path)
+      if(this.beforeRoute()) {
+        this.$router.push(this.path)
+      }
     }
   }
 }
 </script>
 <style>
 .tab-bar-item {
-  flex: 1;
-  height: 49px;
   text-align: center;
-  font-size: 14px;
+  font-size: 12px;
+  transform: scale(0.83333333);
 }
-.tab-bar-item img {
+.tab-bar-item .img img {
   height: 24px;
   vertical-align: middle;
+}
+.tab-bar-item .content {
+  padding-top: 5px;
 }
 </style>

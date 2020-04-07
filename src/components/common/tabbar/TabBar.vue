@@ -12,13 +12,19 @@ export default {
 
 <style>
 #tab-bar {
+  box-sizing: border-box;
   display: flex;
-  background: #f6f6f6;
-  height: 49px;
   position: fixed;
-  bottom: 0;
   left: 0;
-  right: 0;
-  box-shadow: 0px -3px 1px rgba(100, 100, 100, 0.01);
+  bottom: 0;
+  width: 100%;
+  z-index: 1001;
+  background-color: #ffffff;
+  border-top: 1px solid #e7e7e7;
+  border-bottom: 1px solid #f8f8f8;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  padding-top: 2px;
 }
 </style>
