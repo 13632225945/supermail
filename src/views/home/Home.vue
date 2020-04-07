@@ -2,7 +2,7 @@
   <div>
     <search-bar></search-bar>
     <carousel :per-page="1" :autoplay="true" :loop="true" pagination-position="bottom-overlay" 
-      :paginationSize="8" pagination-padding="2" pagination-active-color="#ff5000" 
+      :paginationSize="8" :pagination-padding="2" pagination-active-color="#ff5000" 
       pagination-color="#fff">
       <slide>
         <img src="~assets/img/home/carousel/01.jpg">
@@ -20,17 +20,20 @@
         <img src="~assets/img/home/carousel/05.jpg">
       </slide>
     </carousel>
+    <category></category>
   </div>
 </template>
 
 <script>
 import SearchBar from './searchbar/SearchBar'
+import Category from './category/Category'
 import { Carousel, Slide } from 'vue-carousel'
 export default {
   components: {
     SearchBar,
     Carousel,
-    Slide
+    Slide,
+    Category
   }
 }
 </script>
