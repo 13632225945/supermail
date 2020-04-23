@@ -10,6 +10,9 @@ const More = () => import('views/more/More')
 Vue.use(VueRouter)
 
 const routes = [{
+  path: '',
+  redirect: '/home'
+},{
   path: '/home',
   component: Home
 }, {

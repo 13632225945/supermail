@@ -14,4 +14,11 @@ export default {
 </script>
 <style>
 @import "assets/css/base.css";
+@import "../node_modules/animate.css/animate.min.css";
+#app {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+}
 </style>
